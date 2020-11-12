@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:egco="urn:dgiwg:xmlns:dmf:2.0:iso-g1:egco" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gco="http://www.isotc211.org/2005/gco" targetNamespace="urn:dgiwg:xmlns:dmf:2.0:iso-g1:egco" elementFormDefault="qualified" version="2013-05-24">
+	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../../../../gco/gco.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="../../../../gml/gml.xsd"/>
+	<!--
+		DMF Codelist
+	-->
+	<xs:element name="Codelist" type="gco:CodeListValue_Type">
+		<xs:annotation>
+			<xs:documentation>This a generic element for the implementation of codelists avoiding the definition of XML Schema types and elements when a codelist needs to be defined and used in order to precise the domain of value of a metadata element or property.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!--
+		DMF Record
+	-->
+	<xs:complexType name="Record_Type">
+		<xs:complexContent>
+			<xs:extension base="gco:AbstractObject_Type">
+				<xs:sequence>
+					<xs:element name="property" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:extension base="gml:ValuePropertyType">
+									<xs:attribute name="name" type="xs:string" use="required"/>
+								</xs:extension>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ...................................................................................................................................................................... -->
+	<xs:element name="Record" type="egco:Record_Type" substitutionGroup="gco:Record"/>
+	<!-- ...................................................................................................................................................................... -->
+	<xs:complexType name="Record_PropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="egco:Record"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gco:ObjectReference"/>
+		<xs:attribute ref="gco:nilReason"/>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="http://www.isotc211.org/2005/gmd"
+           elementFormDefault="qualified"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:gmd="http://www.isotc211.org/2005/gmd"
+           xmlns:gmx="http://www.isotc211.org/2005/gmx"
+           xmlns:srv="http://www.isotc211.org/2005/srv"
+
+>
+
+    <!--<xs:include schemaLocation="schema/gmd/metadataApplication.xsd"/>-->
+    <xs:include schemaLocation="schema/dmf/2.0/iso-g1/profile/all/all.xsd"/>
+
+    <xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="schema/srv/srv.xsd"/>
+    <xs:import namespace="http://www.isotc211.org/2005/gmx" schemaLocation="schema/gmx/gmx.xsd"/>
+    
+    <xs:import namespace="http://standards.iso.org/iso/19115/-2/gmi/1.0" schemaLocation="schema/19115/-2/gmi/1.0/gmi.xsd"/>
+    
+    <xs:import namespace="urn:int:nato:geometoc:geo:metadata:ngmp:1.0" schemaLocation="schema/ngmp/1.0/ngmp.xsd"/>
+</xs:schema>

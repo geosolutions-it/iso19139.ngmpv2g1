@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://geonetwork-opensource.org/schemas/schema-ident"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://geonetwork-opensource.org/schemas/schema-ident https://raw.githubusercontent.com/geonetwork/core-geonetwork/3.10.5/web/src/main/webapp/xml/validation/schemaPlugins/schema-ident.xsd">
+
+    <name>iso19139.ngmp2g1</name>
+    <id>d9189200-0200-9001-8989-201707120000</id>
+    <version>2.0</version>
+
+    <appMinorVersionSupported>3.10.6</appMinorVersionSupported>
+
+    <title xml:lang="en">NGMP Edition 2 - ISO generation 1 (ISO19139)</title>
+
+    <description xml:lang="en">
+        NATO Geospatial Metadata Profile (NGMP) - Edition 2.
+       
+        The aim of the NGMP standard is to specify the use of DGIWG Metadata Foundation (DMF) 
+        in a NATO Environment (NATO led operations, exercises or national use).
+              
+        DGIWG Metadata Foundation is a general Defence metadata profile for
+        datasets, series, services, tiles, documents, products and non-geographic datasets, based on the ISO
+        metadata standards of the ISO 19100 series of standards.
+       
+        DMF allows for metadata based either on:
+       
+        - generation "1" of ISO standards (ISO 19115, ISO 19115-2, ISO 19119, ISO/TS 19139 and ISO/TS 19139-2);
+       
+        - generation "2" (ISO 19115-1, ISO 19115-3 and ISO 19157-2).
+       
+        This schema plugin handles the first generation of ISO standards.
+    </description>
+
+    <standardUrl>http://portal.dgiwg.org/files/70776</standardUrl>
+        
+    <depends>iso19139</depends>
+
+    <schemaLocation>
+        http://www.isotc211.org/2005/gmd              http://www.isotc211.org/2005/gmd/gmd.xsd
+        http://www.isotc211.org/2005/gmx              http://www.isotc211.org/2005/gmx/gmx.xsd
+        http://www.opengis.net/gml/3.2                http://www.isotc211.org/2005/gml/gml.xsd   
+        http://standards.iso.org/iso/19115/-2/gmi/1.0 http://standards.iso.org/iso/19115/-2/gmi/1.0/gmi.xsd
+        urn:int:nato:geometoc:geo:metadata:ngmp:1.0   http://www.dgiwg.org/xmlns/nato/GeoMetOc/metadata/ngmp/1.0/ngmp.xsd
+    </schemaLocation>
+
+
+    <autodetect xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+                xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                xmlns:gco="http://www.isotc211.org/2005/gco">
+        <elements>
+            <gmd:metadataStandardName>
+                <gco:CharacterString>STANAG 2586 - NATO Geospatial Metadata Profile \(NGMP\)</gco:CharacterString>
+            </gmd:metadataStandardName>
+        </elements>
+    </autodetect>
+</schema>
